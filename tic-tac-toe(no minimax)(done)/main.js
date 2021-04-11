@@ -145,6 +145,7 @@ function playComp(){
 
 function compSelect() {
     vsComp = true;
+    handleRestartGame();
 }
 
 
