@@ -33,6 +33,7 @@ statusDisplay.innerHTML = playerTurn();
 //event listners
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+document.querySelector(".game--compter").addEventListener("click", compSelect);
 //functions
 
 function handleCellClick(clickedCellEvent) {
@@ -106,6 +107,11 @@ function handleResultValidation() {
         gameActive = false;
         return;
     }
+    if (vsComp == true && currentPlayer == "O") {
+
+        playComp();
+        return;
+    }
 
 }
 
@@ -128,6 +134,18 @@ function handleRestartGame() {
 
 
 
+function playComp(){
+    
+}
+
+
+
+
+
+
+function compSelect() {
+    vsComp = true;
+}
 
 
 function getRandomInt(min, max) {
@@ -154,7 +172,6 @@ function randTitle(played) {
 
     for (n = ranNum; n < gameState.length; n++) {
         if (gameState[n] == "") {
-            console.log("q")
             let cells = document.querySelectorAll(".cell");
             handleCellPlayed(cells[n], cells[n].getAttribute("data-cell-index"));
             handleResultValidation();
@@ -163,3 +180,4 @@ function randTitle(played) {
     }
 
 }
+
