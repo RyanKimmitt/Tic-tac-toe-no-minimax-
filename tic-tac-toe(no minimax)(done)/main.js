@@ -3,7 +3,7 @@
 
 //vars
 const statusDisplay = document.querySelector(".game--status");
-const compButn = document.querySelector(".game--compter");
+const compBtn = document.querySelector(".game--compter");
 
 let gameOn = true;
 let currentPlayer = "X";
@@ -109,7 +109,7 @@ function handleResultValidation() {
     }
     if (vsComp == true && currentPlayer == "O") {
 
-        playComp();
+        randTitle();
         return;
     }
 
@@ -158,7 +158,7 @@ function getRandomInt(min, max) {
 
 
 
-function randTitle(played) {
+function randTitle() {
     let openSPots = [];
     played = false
     for (n = 0; n < gameState.length; n++) {
